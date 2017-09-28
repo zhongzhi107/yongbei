@@ -1,5 +1,7 @@
 import { Model } from 'qails';
 import { model as Catalog } from '../catalog';
+import { model as Country } from '../country';
+import { model as AgeGroup } from '../ageGroup';
 
 /**
  * @class Product
@@ -20,7 +22,7 @@ export default class Product extends Model {
    * @return {boolean|array}
    */
   get hasTimestamps() {
-    return ['createdAt', 'updatedAt'];
+    return ['createdAt', 'updatedAt', 'deletedAt'];
   }
 
   /**
@@ -30,5 +32,23 @@ export default class Product extends Model {
    */
   catalog() {
     return this.belongsTo(Catalog, 'catalogId');
+  }
+
+  /**
+   * One-to-one
+   * @method
+   * @return {bookshelf.Collection}
+   */
+  country() {
+    return this.belongsTo(Country, 'countryId');
+  }
+
+  /**
+   * One-to-one
+   * @method
+   * @return {bookshelf.Collection}
+   */
+  ageGroup() {
+    return this.belongsTo(AgeGroup, 'ageGroupId');
   }
 }

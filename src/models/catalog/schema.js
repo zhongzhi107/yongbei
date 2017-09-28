@@ -11,7 +11,7 @@ export default `
     name: String
     parentId: String
     icon: String
-    products: [Product]
+    products(pageSize: Int): [Product]
   }
 
   type Query {

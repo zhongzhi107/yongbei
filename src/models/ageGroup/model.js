@@ -2,22 +2,15 @@ import { Model } from 'qails';
 import { model as Product } from '../product';
 
 /**
- * @class Catalog
+ * @class AgeGroup
  */
-export default class Catalog extends Model {
-  /**
-   * 依赖模型方法，在本模型底部有定义
-   * 删除时依据此项删除关联表中对应的数据
-   * @static {array}
-   */
-  static dependents = ['product']; // eslint-disable-line
-
+export default class AgeGroup extends Model {
   /**
    * @method 表名称
    * @return {string}
    */
   get tableName() {
-    return 'catalogs';
+    return 'ageGroups';
   }
 
   /**
@@ -36,7 +29,6 @@ export default class Catalog extends Model {
    * @return {bookshelf.Collection}
    */
   products() {
-    // console.log('-----products------', arguments);
-    return this.hasMany(Product, 'catalogId'); // .query({ where: { catalogId: '1' } });
+    return this.hasMany(Product, 'ageGroupId');
   }
 }

@@ -46,7 +46,11 @@ export const up = knex => knex.schema
     table.comment('商品详情表');
     table.string('id', 36).primary().notNullable().defaultTo('').comment('自动编号');
     table.string('catalogId', 36).notNullable().defaultTo('').comment('分类编号');
-    table.string('name', 200).notNullable().defaultTo('').comment('订单编号');
+    table.integer('ageGroupId').notNullable().defaultTo(0).comment('年龄段编号');
+    table.integer('countryId').notNullable().defaultTo(0).comment('商品产地编号');
+    table.string('name', 200).notNullable().defaultTo('').comment('商品名称');
+    table.string('model', 100).notNullable().defaultTo('').comment('商品型号');
+    table.string('size', 100).notNullable().defaultTo('').comment('商品尺寸');
     table.float('salePrice').notNullable().defaultTo(0).comment('市场价格');
     table.float('deposit').notNullable().defaultTo(0).comment('押金');
     table.float('rent').notNullable().defaultTo(0).comment('每日租金');
@@ -55,6 +59,7 @@ export const up = knex => knex.schema
     table.integer('orderIndex').unsigned().notNullable().defaultTo(0).comment('显示排序编号');
     table.timestamp('createdAt').defaultTo(knex.fn.now()).comment('新增时间');
     table.timestamp('updatedAt').notNullable().defaultTo('1971-01-01 00:00:00').comment('修改时间');
+    table.timestamp('deletedAt').notNullable().defaultTo('1971-01-01 00:00:00').comment('删除时间');
   })
   .createTable('orders', (table) => {
     table.comment('订单表');
@@ -84,6 +89,20 @@ export const up = knex => knex.schema
     table.timestamp('createdAt').defaultTo(knex.fn.now()).comment('新增时间');
     table.timestamp('updatedAt').notNullable().defaultTo('1971-01-01 00:00:00').comment('修改时间');
   })
+  .createTable('ageGroups', (table) => {
+    table.comment('商品年龄段配置表');
+    table.increments('id');
+    table.string('name', 20).notNullable().defaultTo('').comment('年龄段名称');
+    table.timestamp('createdAt').defaultTo(knex.fn.now()).comment('新增时间');
+    table.timestamp('updatedAt').notNullable().defaultTo('1971-01-01 00:00:00').comment('修改时间');
+  })
+  .createTable('countries', (table) => {
+    table.comment('商品产地配置表');
+    table.increments('id');
+    table.string('name', 20).notNullable().defaultTo('').comment('产地名称');
+    table.timestamp('createdAt').defaultTo(knex.fn.now()).comment('新增时间');
+    table.timestamp('updatedAt').notNullable().defaultTo('1971-01-01 00:00:00').comment('修改时间');
+  })
 
 ;
 
@@ -96,4 +115,6 @@ export const down = knex => knex.schema
   .dropTableIfExists('orders')
   .dropTableIfExists('pictures')
   .dropTableIfExists('users')
+  .dropTableIfExists('ageGroups')
+  .dropTableIfExists('countries')
 ;
