@@ -1,10 +1,10 @@
 import assert from 'assert';
 import casual from 'casual';
-import { knex } from 'qails';
+import { knex, features } from 'qails';
 import { model as Catalog } from '../../src/models/catalog';
 import { model as Product } from '../../src/models/product';
 
-const { MODEL_SOFTDELETE } = process.env;
+const { MODEL_SOFTDELETE } = features;
 const productId = casual.uuid;
 const catalogId = casual.uuid;
 // console.log(productId);
@@ -45,11 +45,11 @@ before(async () => {
 
 after(async () => {
   await Catalog.forge({ id: catalogId }).destroy();
-  // await Product.forge({ id: productId }).destroy({ hardDelete: true });
+  await Product.forge({ id: productId }).destroy({ hardDelete: true });
 });
 
 describe('# bookshelf-paranoia', () => {
-  if (MODEL_SOFTDELETE === 'true') {
+  if (MODEL_SOFTDELETE) {
     it('The record can be found before the delete action is executed', () => {
       assert.ok(p1);
     });

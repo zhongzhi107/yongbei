@@ -14,12 +14,12 @@
     "postinstall": "babel-node scripts/postinstall.js",
     "postrelease": "git push && git push origin --tags",
     "start": "pm2 start ecosystem.config.js",
-    "test": "mocha --require src/load-dotenv.js --recursive --compilers js:babel-core/register test/features/bookshelf-cascade-delete.js && yarn lint"
+    "test": "mocha --require src/load-dotenv.js --recursive --compilers js:babel-core/register && yarn lint"
   },
   "dependencies": {
     "axios": "^0.16.1",
     "eslint-config-seegno": "^9.0.0",
-    "qails": "^2.1.1"
+    "qails": "^2.2.0"
   },
   "devDependencies": {
     "casual": "^1.5.12",

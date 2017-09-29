@@ -1,12 +1,13 @@
 import assert from 'assert';
 import casual from 'casual';
+import { features } from 'qails';
 import { model as Catalog } from '../../src/models/catalog';
 
-const { MODEL_UUID } = process.env;
+const { MODEL_UUID } = features;
 const name = casual.uuid;
 
 describe('# bookshelf-uuid', () => {
-  if (MODEL_UUID === 'true') {
+  if (MODEL_UUID) {
     before(async () => {
       // 构建测试数据
       await new Catalog().save({ name });

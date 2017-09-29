@@ -1,11 +1,11 @@
 import assert from 'assert';
 import casual from 'casual';
-import { knex } from 'qails';
+import { knex, features } from 'qails';
 import { isDate } from 'util';
 import { model as Catalog } from '../../src/models/catalog';
 import { model as Product } from '../../src/models/product';
 
-const { MODEL_CASCADEDELETE } = process.env;
+const { MODEL_CASCADEDELETE } = features;
 const productId = casual.uuid;
 const catalogId = casual.uuid;
 console.log(productId);
@@ -24,7 +24,7 @@ before(async () => {
 });
 
 describe('# bookshelf-cascade-delete', () => {
-  if (MODEL_CASCADEDELETE === 'true') {
+  if (MODEL_CASCADEDELETE) {
     describe('# 被删数据', () => {
       it('fetch时不存在被删数据', async () => {
         const catalog = await Catalog.forge({ id: catalogId }).fetch();
