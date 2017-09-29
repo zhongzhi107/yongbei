@@ -16,6 +16,22 @@ export default class Product extends Model {
   }
 
   /**
+   * 插入新记录时是否自动生成UUID
+   * @return {boolean}
+   */
+  get uuid() {
+    return true;
+  }
+
+  /**
+   * @method 是否启用记录软删除功能
+   * @return {boolean|string}
+   */
+  get softDelete() {
+    return 'deletedAt';
+  }
+
+  /**
    * 是否包含 created_at 和 updated_at
    * 默认包含
    * @member

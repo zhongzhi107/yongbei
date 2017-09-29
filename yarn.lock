@@ -264,7 +264,7 @@ babel-core@^6.26.0:
     slash "^1.0.0"
     source-map "^0.5.6"
 
-babel-eslint@^7.2.3:
+babel-eslint@^7.1.1, babel-eslint@^7.2.3:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.2.3.tgz#b2fe2d80126470f5c19442dc757253a897710827"
   dependencies:
@@ -886,13 +886,13 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@^3.3.5, bluebird@^3.4.3, bluebird@^3.4.6:
+bluebird@^3.3.5, bluebird@^3.4.3, bluebird@^3.4.6, bluebird@^3.4.7:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
-bookshelf-cascade-delete@^2.0.1:
+"bookshelf-cascade-delete@github:zhongzhi107/bookshelf-cascade-delete":
   version "2.0.1"
-  resolved "https://registry.yarnpkg.com/bookshelf-cascade-delete/-/bookshelf-cascade-delete-2.0.1.tgz#411a83e3c838954b923914bd73fac21271a3ae9c"
+  resolved "https://codeload.github.com/zhongzhi107/bookshelf-cascade-delete/tar.gz/d9741d288aea59d50d1cd214853783a0f8594f67"
   dependencies:
     babel-runtime "^6.6.1"
     bluebird "^3.3.5"
@@ -915,6 +915,15 @@ bookshelf-modelbase@^2.10.4:
     joi "^9.0.4"
     lodash.difference "^4.4.0"
     xtend "^4.0.1"
+
+bookshelf-paranoia@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/bookshelf-paranoia/-/bookshelf-paranoia-0.11.0.tgz#bdacd6ddfdaa2e65a47dde547e30570f0785f712"
+  dependencies:
+    bluebird "^3.4.7"
+    lodash.isempty "^4.4.0"
+    lodash.merge "^4.3.5"
+    lodash.result "^4.3.0"
 
 bookshelf-uuid@^1.0.0:
   version "1.0.0"
@@ -1483,6 +1492,16 @@ eslint-config-qunar@^1.2.1:
     eslint-plugin-jsx-a11y "^3.0.2 || ^4.0.0"
     eslint-plugin-react "^6.9.0"
 
+eslint-config-seegno@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-seegno/-/eslint-config-seegno-9.0.0.tgz#499cf746b6c583f90f8ee082b95f95e62e2bd57e"
+  dependencies:
+    babel-eslint "^7.1.1"
+    eslint-plugin-mocha "^4.0.0"
+    eslint-plugin-sort-class-members "^1.0.1"
+    eslint-plugin-sort-imports-es6 "^0.0.3"
+    eslint-plugin-sql-template "^2.0.0"
+
 eslint-import-resolver-node@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.1.tgz#4422574cde66a9a7b099938ee4d508a199e0e3cc"
@@ -1523,6 +1542,12 @@ eslint-plugin-import@^2.2.0, eslint-plugin-import@^2.7.0:
     jsx-ast-utils "^1.0.0"
     object-assign "^4.0.1"
 
+eslint-plugin-mocha@^4.0.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-4.11.0.tgz#91193a2f55e20a5e35974054a0089d30198ee578"
+  dependencies:
+    ramda "^0.24.1"
+
 eslint-plugin-react@^6.9.0:
   version "6.10.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-6.10.3.tgz#c5435beb06774e12c7db2f6abaddcbf900cd3f78"
@@ -1532,6 +1557,20 @@ eslint-plugin-react@^6.9.0:
     has "^1.0.1"
     jsx-ast-utils "^1.3.4"
     object.assign "^4.0.4"
+
+eslint-plugin-sort-class-members@^1.0.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-class-members/-/eslint-plugin-sort-class-members-1.2.0.tgz#890111a642c091ce55aa5369bea4c9a9f3def85b"
+
+eslint-plugin-sort-imports-es6@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sort-imports-es6/-/eslint-plugin-sort-imports-es6-0.0.3.tgz#959f391d459efbf971d3ebb696d79e1b567aeedc"
+
+eslint-plugin-sql-template@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sql-template/-/eslint-plugin-sql-template-2.0.0.tgz#319937952f2ee1f830a3c6465f8eb2d3a7dcc7f7"
+  dependencies:
+    sql-parse "^0.1.5"
 
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"
@@ -2847,6 +2886,10 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
+lodash.isempty@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
+
 lodash.isobject@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/lodash.isobject/-/lodash.isobject-3.0.2.tgz#3c8fb8d5b5bf4bf90ae06e14f2a530a4ed935e1d"
@@ -3484,9 +3527,9 @@ punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-qails@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/qails/-/qails-2.0.2.tgz#1c30a4430d34955c265b8fb688937cc56a2823fc"
+qails@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/qails/-/qails-2.1.1.tgz#45a1628221b42378a02bd468204c9949582bbb22"
   dependencies:
     babel-cli "^6.26.0"
     babel-eslint "^7.2.3"
@@ -3494,10 +3537,11 @@ qails@^2.0.2:
     babel-preset-stage-0 "^6.24.1"
     babel-register "^6.26.0"
     bookshelf "^0.10.4"
-    bookshelf-cascade-delete "^2.0.1"
+    bookshelf-cascade-delete zhongzhi107/bookshelf-cascade-delete
     bookshelf-json-columns zhongzhi107/bookshelf-json-columns
     bookshelf-mask "^2.0.1"
     bookshelf-modelbase "^2.10.4"
+    bookshelf-paranoia "^0.11.0"
     bookshelf-uuid "^1.0.0"
     dotenv "^4.0.0"
     eslint "^4.5.0"
@@ -3544,6 +3588,10 @@ qs@~2.3.3:
 qs@~6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
+
+ramda@^0.24.1:
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.24.1.tgz#c3b7755197f35b8dc3502228262c4c91ddb6b857"
 
 random-bytes@~1.0.0:
   version "1.0.0"
@@ -3909,6 +3957,10 @@ spdx-license-ids@^1.0.2:
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
+
+sql-parse@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/sql-parse/-/sql-parse-0.1.5.tgz#bf21db788397bb267e58c26e2dc83ac5da125dbd"
 
 sqlstring@2.2.0:
   version "2.2.0"

@@ -59,7 +59,7 @@ export const up = knex => knex.schema
     table.integer('orderIndex').unsigned().notNullable().defaultTo(0).comment('显示排序编号');
     table.timestamp('createdAt').defaultTo(knex.fn.now()).comment('新增时间');
     table.timestamp('updatedAt').notNullable().defaultTo('1971-01-01 00:00:00').comment('修改时间');
-    table.timestamp('deletedAt').notNullable().defaultTo('1971-01-01 00:00:00').comment('删除时间');
+    table.timestamp('deletedAt').nullable().comment('删除时间');
   })
   .createTable('orders', (table) => {
     table.comment('订单表');

@@ -1,6 +1,7 @@
 {
   "name": "yongbei",
   "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
     "db:init": "yarn migrate:rollback && yarn migrate:latest && yarn seed:run",
     "db:tosql": "babel-node scripts/tosql.js",
@@ -13,11 +14,12 @@
     "postinstall": "babel-node scripts/postinstall.js",
     "postrelease": "git push && git push origin --tags",
     "start": "pm2 start ecosystem.config.js",
-    "test": "mocha --recursive --compilers js:babel-core/register && yarn lint"
+    "test": "mocha --require src/load-dotenv.js --recursive --compilers js:babel-core/register test/features/bookshelf-cascade-delete.js && yarn lint"
   },
   "dependencies": {
     "axios": "^0.16.1",
-    "qails": "^2.0.2"
+    "eslint-config-seegno": "^9.0.0",
+    "qails": "^2.1.1"
   },
   "devDependencies": {
     "casual": "^1.5.12",

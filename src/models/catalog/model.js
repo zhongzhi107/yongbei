@@ -10,7 +10,7 @@ export default class Catalog extends Model {
    * 删除时依据此项删除关联表中对应的数据
    * @static {array}
    */
-  static dependents = ['product']; // eslint-disable-line
+  static dependents = ['products']; // eslint-disable-line
 
   /**
    * @method 表名称
@@ -18,6 +18,14 @@ export default class Catalog extends Model {
    */
   get tableName() {
     return 'catalogs';
+  }
+
+  /**
+   * 插入新记录时是否自动生成UUID
+   * @return {boolean}
+   */
+  get uuid() {
+    return true;
   }
 
   /**
