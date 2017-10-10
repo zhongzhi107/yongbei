@@ -19,7 +19,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "eslint-config-seegno": "^9.0.0",
-    "qails": "^2.2.1"
+    "qails": "^2.3.0"
   },
   "devDependencies": {
     "casual": "^1.5.12",

@@ -6,6 +6,12 @@
   products(withRelated: [String], page: Int, pageSize: Int, limit: Int, offset: Int): [Product]
   ```
 - 返回分页 meta 信息
+- 检验 schema 有效性
+  - connection 必须包含 first 或 last
+- 使用枚举类型参数
+- bookshelf withRelated能否传参数
+- 可以对子查询添加限制条件
+- sort 参数第二次查询时直接报错
 
 ## Docs
 https://qails.github.io

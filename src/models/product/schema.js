@@ -18,8 +18,16 @@ export default `
     country: Country
   }
 
+  type Products implements Search {
+    pagination: Pagination
+    pageInfo: PageInfo
+    totalCount: Int
+    cursor: String
+    edges: [Product]
+  }
+
   type Query {
-    products(withRelated: [String], page: Int, pageSize: Int, limit: Int, offset: Int): [Product]
+    products(withRelated: [String], page: Int, pageSize: Int, limit: Int, offset: Int): Products
     product(id: ID!, withRelated: [String]): Product
   }
 `;

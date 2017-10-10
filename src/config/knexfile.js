@@ -10,8 +10,7 @@ const {
   MYSQL_USER,
   MYSQL_PASSWORD,
   MYSQL_DATABASE,
-  MYSQL_PORT,
-  NODE_ENV
+  MYSQL_PORT
 } = process.env;
 
 module.exports = {
@@ -22,8 +21,7 @@ module.exports = {
     password: MYSQL_PASSWORD,
     database: MYSQL_DATABASE,
     port: MYSQL_PORT,
-    charset: 'utf8',
-    debug: NODE_ENV === 'local'
+    charset: 'utf8'
   },
   migrations: {
     tableName: 'migrations',
